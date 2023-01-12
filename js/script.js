@@ -92,17 +92,8 @@ function searchCity(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-// let apiKey = "5201594abea9f3e38b70e65b11a80c24";
-// let city = document.querySelector("#city-input");
-// let city = "Tokyo";
-// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
-
-// function stopDefault(event) {
-//   event.preventDefault();
-// }
 
 function getCurrentWeatherdetails(position) {
   let apiKey = "5201594abea9f3e38b70e65b11a80c24";
@@ -119,5 +110,15 @@ function showCurrentPosition(event) {
 }
 
 let currentLocationData = document.querySelector("#currentloc-btn");
-// currentLocationData.addEventListener("click", stopDefault);
 currentLocationData.addEventListener("click", showCurrentPosition);
+
+function ontarioData(event) {
+  event.preventDefault();
+  let city = "ontario";
+  let apiKey = "5201594abea9f3e38b70e65b11a80c24";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+let ontarioWeather = document.querySelector("#ontario");
+ontarioWeather.addEventListener("click", ontarioData);
