@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 700px;
+}
+#city-input {
+  margin-left: 10px;
+}
+#currentloc-btn {
+  margin-left: 10px;
+}
+.card-body {
+  background: #feffdf;
+  margin-top: 0px;
+}
+h1 {
+  transition: all 150ms ease-in-out;
+}
+
+h1:hover {
+  font-size: 3em;
+  color: #5e63b6;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: white;
+  color: #0d6efd;
+  transition: all 150ms ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card {
+  margin-top: 40px;
+}
+
+.temp {
+  color: hsl(0, 100%, 50%);
+}
+.rain {
+  color: #0d6efd;
+}
+.wind {
+  color: #8f97a2;
+}
+.cloud {
+  color: #4fb9fc;
+}
+.clock {
+  color: goldenrod;
+}
+
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+.cities {
+  position: relative;
+  right: -90px;
+}
+#nextday-temp {
+  margin-right: 10px;
+}
+.other-cities {
+  display: inline;
+}
+a {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #aa26da;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+a:hover {
+  text-decoration: underline;
+  color: green;
+  font-size: 20px;
+}
+/* 
+.currentLocation {
+    
+} */
