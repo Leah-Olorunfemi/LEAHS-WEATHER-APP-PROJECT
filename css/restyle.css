@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+.weather-app {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid blue;
+  border-radius: 7px;
+  max-width: 600px;
+  display: block;
+  /* margin: 0 auto; */
+}
+
+/* .row first-row */
+.first-row {
+  margin-bottom: 20px;
+}
