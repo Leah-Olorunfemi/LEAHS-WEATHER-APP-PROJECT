@@ -50,7 +50,7 @@ let timeElement = document.querySelector("#time");
 timeElement.innerHTML = formatDate();
 
 function displayWeather(response) {
-  console.log(response.data);
+  // console.log(response.data);
   let cityElement = document.querySelector("#city-name");
   let cityDisplayed = response.data.name;
   cityElement.innerHTML = cityDisplayed;
@@ -68,8 +68,8 @@ function displayWeather(response) {
   let temperatureElement = document.querySelector("#temp");
   let tempDisplayed = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = `Temperature: ${tempDisplayed}℃`;
-  console.log(tempDisplayed);
-  debugger;
+  // console.log(tempDisplayed);
+  // debugger;
   let windElement = document.querySelector("#wind");
   windDisplayed = response.data.wind.speed;
   windElement.innerHTML = `Wind: <i class="fa-solid fa-wind wind"></i>${windDisplayed} km/h`;
@@ -88,7 +88,6 @@ function searchCity(event) {
   let city = document.querySelector("#city-input").value;
   let apiKey = "5201594abea9f3e38b70e65b11a80c24";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeather);
 }
 
