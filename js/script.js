@@ -112,7 +112,7 @@ function showCurrentPosition(event) {
 let currentLocationData = document.querySelector("#currentloc-btn");
 currentLocationData.addEventListener("click", showCurrentPosition);
 
-function ontarioData(event) {
+function getOntarioWeather(event) {
   event.preventDefault();
   let city = "ontario";
   let apiKey = "5201594abea9f3e38b70e65b11a80c24";
@@ -120,5 +120,29 @@ function ontarioData(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
+function getMadeiraWeather(event) {
+  event.preventDefault();
+
+  let apiKey = "5201594abea9f3e38b70e65b11a80c24";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=madeira&appid=${apiKey}&units=metric`;
+
+  // `https://api.openweathermap.org/data/2.5/weather?q=madeira&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function getDaresalamWeather(event) {
+  event.preventDefault();
+  let city = "dar es salaam";
+  let apiKey = "5201594abea9f3e38b70e65b11a80c24";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
+}
 let ontarioWeather = document.querySelector("#ontario");
-ontarioWeather.addEventListener("click", ontarioData);
+ontarioWeather.addEventListener("click", getOntarioWeather);
+
+let madeiraWeather = document.querySelector("#madeira");
+madeiraWeather.addEventListener("click", getMadeiraWeather);
+
+let daresalamWeather = document.querySelector("#daresalam");
+daresalamWeather.addEventListener("click", getDaresalamWeather);
