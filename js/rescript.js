@@ -149,9 +149,9 @@ function getOntarioWeather(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-function getGenevaWeather(event) {
+function getLucerneWeather(event) {
   event.preventDefault();
-  let city = "geneva";
+  let city = "lucerne";
   let apiKey = "5201594abea9f3e38b70e65b11a80c24";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
@@ -176,8 +176,8 @@ function getDaresalamWeather(event) {
 let ontarioWeather = document.querySelector("#ontario");
 ontarioWeather.addEventListener("cliick", getOntarioWeather);
 
-let genevaWeather = document.querySelector("#geneva");
-genevaWeather.addEventListener("cliick", getGenevaWeather);
+let LucerneWeather = document.querySelector("#lucerne");
+LucerneWeather.addEventListener("cliick", getLucerneWeather);
 
 let madeiraWeather = document.querySelector("#madeira");
 madeiraWeather.addEventListener("click", getMadeiraWeather);
