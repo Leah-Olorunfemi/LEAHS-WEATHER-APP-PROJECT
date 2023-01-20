@@ -25,55 +25,67 @@
 
 
             <div class="weather-app">
-                <div class="row first-row">
+                <form id="search-form">
 
 
-                    <div class="col-6">
-                        <input type="search" class="form-control shadow-sm" id="" placeholder="Type a City..">
+                    <div class="row first-row">
+
+
+
+
+                        <div class="col-6">
+                            <input type="search" class="form-control shadow-sm" id="city-input"
+                                placeholder="Type a City..">
+                        </div>
+                        <div class="col-6">
+                            <input type="submit" id="search" value="Search" class="btn btn-success w-100">
+
+
+
+                        </div>
+
+
                     </div>
-                    <div class="col-6">
-                        <input type="submit" value="Search" class="btn btn-success w-100">
-
-
-                        <!-- <ul>
-                    <li>Next Day 1 32°24°</li>
-                    <li>Next Day 2 32°24°</li>
-                    <li>Next Day 3 32°24°</li>
-                    <li>Next Day 4 32°24°</li>
-                    <li>Next Day 5 32°24°</li>
-                    <li>Next Day 6 32°24°</li>
-
-                </ul> -->
-                    </div>
-
-                </div>
+                </form>
                 <!-- <br> -->
+                <!-- <br> -->
+                <div class="row date-row" id="day-info">Friday January 16th, 2022</div>
                 <div class="row second-row">
                     <div class="col-4">
-                        <h1>TEXAS</h1>
+                        <h1 id="city-searched">TEXAS</h1>
                     </div>
-                    <div class="col-2">Time</div>
+                    <div class="col-2" id="time">03:07</div>
                     <div class="col-6">
-                        <button class="btn btn-danger w-100">The weather here ⬇</button>
+                        <button class="btn btn-danger w-100" id="current-locationbtn">The weather here ⬇</button>
                     </div>
 
                 </div>
+
                 <div class="row third-row">
 
                     <div class="col-3">Temperature</div>
                     <div class="col-3">Humidity</div>
                     <div class="col-3">Windspeed</div>
-                    <div class="col-3">Weather description</div>
+                    <div class="col-3">Weather</div>
                 </div>
                 <div class="row fourth-row">
-
-                    <div class="col-3">3℃</div>
-                    <div class="col-3">72%</div>
-                    <div class="col-3">3 km/h</div>
-                    <div class="col-3">Cloudy</div>
+                    <div class="col-3" id="temperature"></div>
+                    <div class="col-3" id="humidity"></div>
+                    <div class="col-3" id="wind"></div>
+                    <div class="col-3" id="weather-condition"></div>
                 </div>
+
+                <div class="row units-row">
+                    <div class="col-3" id="temperature"><span id="celLink"><a href="#">C</a></span> | <span
+                            id="farhLink"><a href="#">F</a></span></div>
+                    <div class="col-3" id="humidity">%</div>
+                    <div class="col-3" id="wind">km/h</div>
+                    <div class="col-3" id="weather-condition"><img src="#" alt="" id="icon" width="50px"></div>
+                </div>
+
+
                 <br>
-                <div class="row">
+                <div class="row fifth-row">
 
                     <div class="col-3">Next Day 1</div>
                     <div class="col-3">Next Day 2</div>
@@ -81,14 +93,14 @@
                     <div class="col-3">Next Day 4</div>
                 </div>
 
-                <div class="row">
+                <div class="row sixth-row">
 
                     <div class="col-3">32°24°</div>
                     <div class="col-3">32°24°</div>
                     <div class="col-3">32°24°</div>
                     <div class="col-3">32°24°</div>
                 </div>
-                <div class="row">
+                <div class="row seventh-row">
 
                     <div class="col-3">🌞</div>
                     <div class="col-3">⛈️</div>
@@ -96,16 +108,20 @@
                     <div class="col-3">🌕</div>
                 </div>
                 <br>
-                <div class="row">
-                    Check out the weather in
-                    these cities below!😀
+                <div class="row eight-row">
+                    <p>
+
+                        Hey,check out the weather in
+                        these cities below!😀
+                    </p>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-3">Ontario</div>
-                    <div class="col-3">Texas</div>
-                    <div class="col-3">Madeira</div>
-                    <div class="col-3">Lome</div>
+                <div class="row ninth-row">
+                    <div class="col-3" id="ontario"><a href="#">Ontario</a></div>
+                    <div class="col-3" id="geneva"><a href="#">Geneva</a></div>
+                    <div class="col-3" id="madeira"><a href="#">Madeira</a></div>
+                    <div class="col-3" id="daresalam"> <a href="#">Dar es
+                            Salaam</a></div>
                 </div>
             </div>
             <small>Open-source code by Leah Olorunfemi</small>
@@ -113,7 +129,7 @@
     </div>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/rescript.js"></script>
 </body>
 
 </html>
