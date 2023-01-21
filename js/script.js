@@ -41,8 +41,8 @@ function formatDay() {
 let dateDisplayed = document.querySelector("#day-info");
 dateDisplayed.innerHTML = formatDay();
 
-function formatDate() {
-  let currentDate = new Date();
+function formatDate(timestamp) {
+  let currentDate = new Date(timestamp);
   let hours = currentDate.getHours();
   if (hours < 0) {
     hours = `0${hours}`;
@@ -63,18 +63,20 @@ function displayWeather(response) {
   let citySearched = document.querySelector("#city-searched");
   let temperatureShown = document.querySelector("#temperature");
   let tempDisplayed = Math.round(response.data.main.temp);
-  temperatureShown.innerHTML = tempDisplayed;
-  celsiusTemperature = response.data.main.temp;
-
   let humidityShown = document.querySelector("#humidity");
   let windShown = document.querySelector("#wind");
   let weatherconditionShown = document.querySelector("#weather-condition");
+  let timeShown = document.querySelector("#time");
 
   citySearched.innerHTML = response.data.name;
-  temperatureShown.innerHTML = Math.round(response.data.main.temp);
+  temperatureShown.innerHTML = tempDisplayed;
   humidityShown.innerHTML = response.data.main.humidity;
   windShown.innerHTML = Math.round(response.data.wind.speed);
   weatherconditionShown.innerHTML = response.data.weather[0].description;
+  timeShown.innerHTML = formatDate(response.data.dt * 1000);
+  // console.log(response.data.dt);
+  celsiusTemperature = response.data.main.temp;
+
   // console.log(response.data.weather[0].icon);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
