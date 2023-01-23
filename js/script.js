@@ -176,10 +176,10 @@ function getDaresalamWeather(event) {
 }
 
 let ontarioWeather = document.querySelector("#ontario");
-ontarioWeather.addEventListener("cliick", getOntarioWeather);
+ontarioWeather.addEventListener("click", getOntarioWeather);
 
 let LucerneWeather = document.querySelector("#lucerne");
-LucerneWeather.addEventListener("cliick", getLucerneWeather);
+LucerneWeather.addEventListener("click", getLucerneWeather);
 
 let madeiraWeather = document.querySelector("#madeira");
 madeiraWeather.addEventListener("click", getMadeiraWeather);
