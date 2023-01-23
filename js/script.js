@@ -54,8 +54,8 @@ function formatDate(timestamp) {
   return `${hours}:${mins}`;
 }
 
-let timeShown = document.querySelector("#time");
-timeShown.innerHTML = formatDate();
+// let timeShown = document.querySelector("#time");
+// timeShown.innerHTML = formatDate();
 
 function displayWeather(response) {
   // console.log(response.data);

@@ -145,3 +145,7 @@ madeiraWeather.addEventListener("click", getMadeiraWeather);
 
 let daresalamWeather = document.querySelector("#daresalam");
 daresalamWeather.addEventListener("click", getDaresalamWeather);
+
+// var str = new String("Demo Text");
+// document.write(str.bold());
+// alert(str.bold());

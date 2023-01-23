@@ -22,15 +22,14 @@ h1 {
   padding: 20px;
   border: 1px solid #7c7c7c;
   border-radius: 7px;
-  /* max-width: 600px; */
   display: block;
-  /* margin: 0 auto; */
 }
 
 /* .row first-row */
 .first-row {
   margin-bottom: 30px;
 }
+
 .date-row {
   margin: 0px;
   position: relative;
@@ -44,14 +43,9 @@ h1 {
 }
 
 .third-row {
-  /* position: relative; */
   bottom: -10px;
   left: 20px;
   margin: 0px;
-
-  /* 
-  padding: 20px;
-  margin: 0px; */
 }
 
 .fourth-row {
