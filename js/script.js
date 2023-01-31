@@ -86,34 +86,15 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function displayForecast() {
+function displayForecastDay() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row fifth-row" id="forecast">`;
-  forecastHTML =
-    forecastHTML +
-    `
-                   <div class="col-3">Next Day 1</div>
-                    <div class="col-3">Next Day 2</div>
-                    <div class="col-3">Next Day 3</div>
-                    <div class="col-3">Next Day 4</div> 
-                </div>
+  let forecastHTML = `<div class="row fifth-row">`;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `<div class="col-3">${day}</div>`;
 
-                <div class="row sixth-row" id="temp-figures">
-
-                    <div class="col-3">32°24°</div>
-                    <div class="col-3">32°24°</div>
-                    <div class="col-3">32°24°</div>
-                    <div class="col-3">32°24°</div> 
-                </div>
-                <div class="row seventh-row" id="temp-icons">
-                    
-                    <div class="col-3">🌞</div>
-                    <div class="col-3">⛈️</div>
-                    <div class="col-3">🌦️</div>
-                    <div class="col-3">🌕</div> 
-               `;
-  forecastHTML = forecastHTML + ` </div>`;
-  forecastElement.innerHTML = forecastHTML;
+    forecastElement.innerHTML = forecastHTML;
+  });
 }
 
 function search(city) {
@@ -217,5 +198,5 @@ madeiraWeather.addEventListener("click", getMadeiraWeather);
 let daresalamWeather = document.querySelector("#daresalam");
 daresalamWeather.addEventListener("click", getDaresalamWeather);
 
-displayForecast();
+displayForecastDay();
 search("Texas");
