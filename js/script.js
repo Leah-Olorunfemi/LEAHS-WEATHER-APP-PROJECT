@@ -91,11 +91,27 @@ function displayForecastDay() {
   let forecastHTML = `<div class="row fifth-row">`;
   let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
   days.forEach(function (day) {
-    forecastHTML = forecastHTML + `<div class="col-3">${day}</div>`;
-
-    forecastElement.innerHTML = forecastHTML;
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+      <div class>${day}</div>
+      <div class="row sixth-row" id="temp-figures">
+       <span class=weather-max>32°</span>
+       <span class=weather-min>18°</span>
+      </div>
+      <div class="row seventh-row" id="temp-icons">
+      <div class>🌞</div>
+      </div>`;
   });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
+
+// function displayForecastTemperature() {
+//   let forecastTempElement = document.querySelector("#temp-figures");
+//   let forecastTempHTML = `<div class="row sixth-row" id="temp-figures">`;
+// }
 
 function search(city) {
   // event.preventDefault();
@@ -199,4 +215,5 @@ let daresalamWeather = document.querySelector("#daresalam");
 daresalamWeather.addEventListener("click", getDaresalamWeather);
 
 displayForecastDay();
+// displayForecastTemperature();
 search("Texas");
