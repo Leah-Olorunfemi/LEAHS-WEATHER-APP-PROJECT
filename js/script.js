@@ -57,6 +57,19 @@ function formatDate(timestamp) {
 // let timeShown = document.querySelector("#time");
 // timeShown.innerHTML = formatDate();
 
+function getForecast(coordinates) {
+  // console.log(coordinates);
+  let apiKey = "eae061c95483dd066657bfc7525418ed";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let units = "metric";
+  // let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid={apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+  // console.log(apiUrl);
+  https: axios.get(apiUrl).then(displayForecastDays);
+}
+
 function displayWeather(response) {
   // console.log(response.data);
 
@@ -84,34 +97,34 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
-function displayForecastDay() {
+function displayForecastDays(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row fifth-row">`;
   let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
+  console.log(days);
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `<div class="col-3">
-      <div class>${day}</div>
-      <div class="row sixth-row" id="temp-figures">
-       <span class=weather-max>32°</span>
-       <span class=weather-min>18°</span>
-      </div>
-      <div class="row seventh-row" id="temp-icons">
-      <div class>🌞</div>
-      </div>`;
+          <div class>${day}</div>
+          <div  id="temp-figures">
+            <span class=weather-max>32°</span>
+            <span class=weather-min>18°</span>
+          </div>
+          <div id="temp-icons">
+<div class><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="50px"></div>
+        </div>
+        </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-// function displayForecastTemperature() {
-//   let forecastTempElement = document.querySelector("#temp-figures");
-//   let forecastTempHTML = `<div class="row sixth-row" id="temp-figures">`;
-// }
 
 function search(city) {
   // event.preventDefault();
@@ -214,6 +227,5 @@ madeiraWeather.addEventListener("click", getMadeiraWeather);
 let daresalamWeather = document.querySelector("#daresalam");
 daresalamWeather.addEventListener("click", getDaresalamWeather);
 
-displayForecastDay();
 // displayForecastTemperature();
 search("Texas");
