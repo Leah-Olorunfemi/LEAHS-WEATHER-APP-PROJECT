@@ -1,6 +1,5 @@
 // alert("hey");
 
-// Thursday January 16th, 2022 03:12
 function formatDay() {
   let currentDate = new Date();
   let days = [
@@ -54,28 +53,51 @@ function formatDate(timestamp) {
   return `${hours}:${mins}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  return days[day];
+}
+
 // let timeShown = document.querySelector("#time");
 // timeShown.innerHTML = formatDate();
 
 function displayForecastDays(response) {
-  console.log(response.data.daily);
+  // console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row fifth-row">`;
   let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
-  console.log(days);
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-3">
-          <div class>${day}</div>
-          <div  id="temp-figures">
-            <span class=weather-max>32°</span>
-            <span class=weather-min>18°</span>
+  // console.log(days);
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-3">
+          <div class>${formatDay(forecastDay.dt)}</div>
+                    <div  id="temp-figures">
+          <span class="weathermax">
+          ${Math.round(forecastDay.temp.max)}°</span>
+          <span class="weathermin">
+          ${Math.round(forecastDay.temp.min)}° </span>
           </div>
           <div id="temp-icons">
-<div class><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="50px"></div>
+<div class><img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="" width="50px"></div>
         </div>
         </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -88,8 +110,7 @@ function getForecast(coordinates) {
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let units = "metric";
-  // let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid={apiKey}&units=${units}`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
   https: axios.get(apiUrl).then(displayForecastDays);
 }
