@@ -11,10 +11,14 @@ h1 {
   /* #70757a; google color:  */
 }
 
+.container {
+}
+
 .wrapper {
   max-width: 600px;
   display: block;
   margin: 0 auto;
+  background: linear-gradient(to top, #aa076b, #61045f);
 }
 
 .weather-app {
@@ -23,6 +27,32 @@ h1 {
   border: 1px solid #7c7c7c;
   border-radius: 7px;
   display: block;
+
+  color: white;
+}
+
+.weather-here-btn {
+  background-color: white;
+  color: #61045f;
+}
+
+.weather-here-btn:hover {
+  background-color: #61045f;
+  color: white;
+  border: 1px solid white;
+}
+
+.here-weather-arrow {
+  width: 15px;
+}
+
+.btn-search {
+  background-color: #213363;
+  color: white;
+}
+.btn-search:hover {
+  background-color: white;
+  color: #213363;
 }
 
 /* .row first-row */
@@ -95,7 +125,7 @@ h1 {
 a {
   text-decoration: none;
   pointer-events: visible;
-  color: black;
+  color: white;
 }
 
 .celLink {
