@@ -20,55 +20,54 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="wrapper">
-
-
-            <div class="weather-app">
+    <div class="container mt-5">
+        <div class="wrapper rounded mt-5">
+            <div class="weather-app mt-5">
                 <form id="search-form">
                     <div class="row first-row">
-                        <div class="col-6">
-                            <input type="search" class="form-control shadow-sm" id="city-input"
+                        <div class="col-sm-6">
+                            <input type="search" class="form-control shadow-sm mt-3" id="city-input"
                                 placeholder="Type a City..">
                         </div>
-                        <div class="col-6">
-                            <input type="submit" id="search" value="Search" class="btn btn-success w-100">
+                        <div class="col-sm-6 mt-3">
+                            <input type="submit" id="search" value="Search" class="btn btn-search w-100">
                         </div>
                     </div>
                 </form>
-                <!-- <br> -->
-                <!-- <br> -->
+
+
                 <div class="row date-row" id="day-info"></div>
                 <div class="row second-row">
-                    <div class="col-4">
+                    <div class="col-sm-4">
                         <h1 id="city-searched"></h1>
                     </div>
-                    <div class="col-2" id="time"></div>
-                    <div class="col-6">
-                        <button class="btn btn-danger w-100" id="current-locationbtn">The weather here ⬇</button>
+                    <div class="col-sm-2" id="time"></div>
+                    <div class="col-sm-6">
+                        <button class="btn weather-here-btn w-100" id="current-locationbtn">The Weather Right Here
+                            <span><img src="images/arrow.jpeg" class="img-fluid here-weather-arrow"></span></button>
                     </div>
                 </div>
 
                 <div class="row third-row">
 
-                    <div class="col-3">Temperature</div>
-                    <div class="col-3">Humidity</div>
-                    <div class="col-3">Windspeed</div>
-                    <div class="col-3">Weather</div>
+                    <div class="col-sm-3">Windspeed</div>
+                    <div class="col-sm-3">Weather</div>
+                    <div class="col-sm-3">Humidity</div>
+                    <div class="col-sm-3">Temperature</div>
                 </div>
                 <div class="row fourth-row">
-                    <div class="col-3" id="temperature"></div>
-                    <div class="col-3" id="humidity"></div>
-                    <div class="col-3" id="wind"></div>
-                    <div class="col-3" id="weather-condition"></div>
+                    <div class="col-sm-3" id="temperature"></div>
+                    <div class="col-sm-3" id="humidity"></div>
+                    <div class="col-sm-3" id="wind"></div>
+                    <div class="col-sm-3" id="weather-condition"></div>
                 </div>
 
                 <div class="row units-row">
-                    <div class="col-3" id="temperature"><span id="celLink"><a href="#">C</a></span> | <span
+                    <div class="col-sm-3" id="temperature"><span id="celLink"><a href="#">C</a></span> | <span
                             id="farhLink"><a href="#">F</a></span></div>
-                    <div class="col-3" id="humidity">%</div>
-                    <div class="col-3" id="wind">km/h</div>
-                    <div class="col-3" id="weather-condition"><img src="#" alt="" id="icon" width="50px"></div>
+                    <div class="col-sm-3" id="humidity">%</div>
+                    <div class="col-sm-3" id="wind">km/h</div>
+                    <div class="col-sm-3" id="weather-condition"><img src="#" alt="" id="icon" width="50px"></div>
                 </div>
 
 
@@ -98,23 +97,27 @@
                 <br>
                 <div class="row eight-row">
                     <p>
-
                         Hey,check out the weather in
                         these cities below!😀
                     </p>
                 </div>
                 <br>
                 <div class="row ninth-row">
-                    <div class="col-3" id="ontario"><a href="#">Ontario</a></div>
-                    <div class="col-3" id="lucerne"><a href="#">Lucerne</a></div>
-                    <div class="col-3" id="madeira"><a href="#">Madeira</a></div>
-                    <div class="col-3" id="daresalam"> <a href="#">Dar es
+                    <div class="col-sm-3" id="ontario"><a href="#">Ontario</a></div>
+                    <div class="col-sm-3" id="lucerne"><a href="#">Lucerne</a></div>
+                    <div class="col-sm-3" id="madeira"><a href="#">Madeira</a></div>
+                    <div class="col-sm-3" id="daresalam"><a href="#">Dar es
                             Salaam</a></div>
                 </div>
+                <div>
+                    <small> <a href="https://github.com/Leah-Olorunfemi/LEAHS-WEATHER-APP-PROJECT"
+                            target="_blank">Open-source
+                            code</a> by Leah
+                        Olorunfemi</small>
+                </div>
+
             </div>
-            <small> <a href="https://github.com/Leah-Olorunfemi/LEAHS-WEATHER-APP-PROJECT" target="_blank">Open-source
-                    code</a> by Leah
-                Olorunfemi</small>
+
         </div>
     </div>
 
