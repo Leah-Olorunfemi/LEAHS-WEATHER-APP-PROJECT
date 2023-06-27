@@ -10,6 +10,12 @@ h1 {
   top: -5px;
 }
 
+.container {
+  padding: 10px;
+
+  background-color: rgb(241, 235, 239);
+  /* background-color: black; */
+}
 .wrapper {
   max-width: 600px;
   display: block;
